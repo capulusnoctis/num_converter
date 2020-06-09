@@ -1,17 +1,17 @@
 # coding=utf-8
 import sys
 import string
-from PyQt4 import QtCore, QtGui, uic
+from PyQt5 import QtCore, QtGui, uic
 
 qtCreatorFile = "conversorBases.ui"  # Enter file here. extension '.ui'
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 
-class ConversorBases(QtGui.QMainWindow, Ui_MainWindow):
+class ConversorBases(QtGui.QWindow, Ui_MainWindow):
     def __init__(self):
-        QtGui.QMainWindow.__init__(self, flags = QtCore.Qt.FramelessWindowHint) # Sin Frame
-        #QtGui.QMainWindow.__init__(self) # Con Frame
+        QtGui.QWindow.__init__(self)  # Sin Frame
+        # QtGui.QMainWindow.__init__(self) # Con Frame
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
 
